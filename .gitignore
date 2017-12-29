@@ -4,3 +4,4 @@ checkpoints
 visualize.dot
 visualize.svg
 visualize.png
+config.jl

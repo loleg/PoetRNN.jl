@@ -49,7 +49,7 @@ for t = 2:SAMPLE_LENGTH-1
   # do sampling and init the next inputs
   jl_data_start[:] = 0
   for i = 1:BATCH_SIZE_SMP
-    prob = WeightVec(outputs[:, i])
+    prob = Weights(outputs[:, i])
     k    = sample(prob)
     output_samples[t, i] = inv_vocab[k]
     jl_data_start[k, i]  = 1
