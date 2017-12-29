@@ -1,6 +1,8 @@
 # An explicitly unrolled LSTM with fixed sequence length.
 using MXNet
 
+const VecOfNDArray = Array{mx.NDArray, 1}
+
 #--LSTMState
 struct LSTMState
   c :: mx.SymbolicNode
@@ -123,7 +125,7 @@ mutable struct NLL <: mx.AbstractEvalMetric
   NLL() = new(0.0, 0)
 end
 
-function mx.update!(metric::NLL, labels::Vector{<:mx.NDArray}, preds::Vector{<:mx.NDArray})
+function mx.update!(metric::NLL, labels::VecOfNDArray, preds::VecOfNDArray)
   @assert length(labels) == length(preds)
   nll = 0.0
   for (label, pred) in zip(labels, preds)
