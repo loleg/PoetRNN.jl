@@ -66,7 +66,8 @@ output_texts = [join(output_samples[:,i]) for i = 1:BATCH_SIZE_SMP]
 output_texts = [replace(x, UNKNOWN_CHAR, '?') for x in output_texts]
 
 for (i, text) in enumerate(output_texts)
-  println("## Sample $i")
+  #println("## Sample $i")
+  text = join(split(replace(text, "[[", "["), "[")[2:5], "\n")
   println(text)
   println()
 end

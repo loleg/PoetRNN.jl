@@ -1,4 +1,4 @@
-# JuliaPoetRNN
+# PoetRNN.jl
 
 This project is a *Julia* implementation of a LSTM RNN (recurrent neural network) designed to learn and produce short verse poetry. This is inspired from [PoetRNN](https://github.com/sballas8/PoetRNN), written by Sam Ballas in Python.
 
@@ -17,10 +17,11 @@ To run this project, you will need to install (Pkg.add) three Julia packages:
 
 ### Training
 
-An example data `input.txt` can be downloaded [here](https://github.com/dmlc/web-data/tree/master/mxnet/tinyshakespeare).
+An example dataset (default filename in `config.jl` is `input.txt`) can be downloaded [here](https://github.com/dmlc/web-data/tree/master/mxnet/tinyshakespeare) and placed in the `data` folder.
 
-Copy to `config.jl` and modify parameters in [config.jl.default](config.jl.default), and then run [train.jl](train.jl). An example output
-of training looks like this:
+Copy [config.jl.default](config.jl.default) to `config.jl` and modify parameters, and then run [train.jl](train.jl). 
+
+An example output of training looks like this:
 
 ```
 ...
